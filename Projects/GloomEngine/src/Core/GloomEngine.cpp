@@ -1,8 +1,8 @@
-#include "include/Core/GloomEngine.h"
+#include "Core/GloomEngine.h"
 
-#include "include/Core/Logger.h"
-#include "include/Renderer/Window.h"
-#include "include/Core/GloomEngineConfig.h"
+#include "Core/Logger.h"
+#include "Renderer/Window.h"
+#include "Core/GloomEngineConfig.h"
 using namespace gloom;
 
 #include "GLFW/glfw3.h"

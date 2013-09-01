@@ -3,7 +3,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "include/Core/GloomEngine.h"
+#include "Core/GloomEngine.h"
 
 class Game : public GloomEngine
 {

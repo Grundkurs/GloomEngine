@@ -1,8 +1,8 @@
 
-#include "include/Core/Logger.h"
-#include "include/Renderer/Window.h"
-#include "include/Renderer/Renderer.h"
-#include "include/Core/GloomEngineConfig.h"
+#include "Core/Logger.h"
+#include "Renderer/Window.h"
+#include "Renderer/Renderer.h"
+#include "Core/GloomEngineConfig.h"
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>

@@ -1,7 +1,7 @@
-#include "include/Core/GloomEngineConfig.h"
+#include "Core/GloomEngineConfig.h"
 
-#include "include/Core/Logger.h"
-#include "include/Core/ResourcePaths.h"
+#include "Core/Logger.h"
+#include "Core/ResourcePaths.h"
 
 #include <fstream>
 using namespace std;

@@ -3,7 +3,7 @@ Copyright 2013 @ Chris Leisure
 All rights reserved.
 */
 
-#include "include/Core/Logger.h"
+#include "Core/Logger.h"
 
 #include <time.h>
 #include <stdio.h>

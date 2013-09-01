@@ -1,6 +1,6 @@
 #include "include/Game.h"
 
-#include "include/Core/Logger.h"
+#include "Core/Logger.h"
 
 Game::Game()
 	:

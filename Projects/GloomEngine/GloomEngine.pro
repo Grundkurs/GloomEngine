@@ -14,22 +14,19 @@ SOURCES += \
 	src/Renderer/Renderer.cpp \
 	src/Renderer/Window.cpp \
 	src/Core/Logger.cpp \
-    src/Core/GloomEngine.cpp \
-    src/Core/GloomEngineConfig.cpp
+	src/Core/GloomEngine.cpp \
+	src/Core/GloomEngineConfig.cpp
 
 HEADERS += \
-	include/LeeEngine3/Core/TypeTraits.h \
-	include/LeeEngine3/Core/Types.h \
-	include/LeeEngine3/Core/Logger.h \
 	include/Core/TypeTraits.h \
 	include/Core/Types.h \
 	include/Core/Logger.h \
 	include/Core/Factory.h \
 	include/Renderer/Renderer.h \
 	include/Renderer/Window.h \
-    include/Core/GloomEngine.h \
-    include/Core/GloomEngineConfig.h \
-    include/Core/ResourcePaths.h
+	include/Core/GloomEngine.h \
+	include/Core/GloomEngineConfig.h \
+	include/Core/ResourcePaths.h
 unix:!symbian {
 	maemo5 {
 		target.path = /opt/usr/lib
@@ -38,5 +35,7 @@ unix:!symbian {
 	}
 	INSTALLS += target
 }
+
+INCLUDEPATH += ../GloomEngine/include
 
 QMAKE_CXXFLAGS += -std=c++11
