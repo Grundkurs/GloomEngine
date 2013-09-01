@@ -6,7 +6,13 @@
 #include <fstream>
 using namespace std;
 
+namespace gloom
+{
+
 GloomEngineConfig::GloomEngineConfig()
+	:
+	mScreenWidth(800),
+	mScreenHeight(600)
 	{
 
 	}
@@ -62,3 +68,5 @@ int GloomEngineConfig::getScreenHeight() const
 	{
 	return mScreenHeight;
 	}
+
+}

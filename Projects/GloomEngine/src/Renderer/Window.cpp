@@ -2,6 +2,7 @@
 #include "include/Core/Logger.h"
 #include "include/Renderer/Window.h"
 #include "include/Renderer/Renderer.h"
+#include "include/Core/GloomEngineConfig.h"
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -31,7 +32,7 @@ Window::~Window()
 	glfwTerminate();
 	}
 
-bool Window::init(int width, int height)
+bool Window::init(GloomEngineConfig * pConfig)
 	{
 	LogFuncBegin()
 	if ( !glfwInit() )
@@ -46,7 +47,7 @@ bool Window::init(int width, int height)
 	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	//glfwWindowHint(GLFW_SAMPLES, mpSettings->GetSamplesAA() );
 
-	mpWindow = glfwCreateWindow( width, height, "GLFW3", NULL, NULL );
+	mpWindow = glfwCreateWindow( pConfig->getScreenWidth(), pConfig->getScreenHeight(), "GLFW3", NULL, NULL );
 
 	if ( !mpWindow )
 		{

@@ -4,6 +4,9 @@
 
 #include <string>
 
+namespace gloom
+{
+
 class GloomEngineConfig
 {
 public:
@@ -20,4 +23,6 @@ private:
 	int mScreenHeight;
 
 };
+
+}
 #endif // GLOOMENGINECONFIG_H

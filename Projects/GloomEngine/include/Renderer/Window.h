@@ -11,6 +11,7 @@ namespace gloom
 {
 
 class Renderer;
+class GloomEngineConfig;
 
 class Window
 {
@@ -26,7 +27,7 @@ public:
 
 	//Renderer& renderer();
 
-	bool init( int width, int height );
+	bool init( GloomEngineConfig * pConfig );
 
 	void activate();
 

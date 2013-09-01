@@ -31,7 +31,6 @@ GloomEngine::~GloomEngine()
 bool GloomEngine::init()
 	{
 	LogFuncBegin()
-	// TODO: load the config file for engine startup properties
 
 	GloomEngineConfig config;
 	if ( !config.LoadConfigFile() )
@@ -41,8 +40,7 @@ bool GloomEngine::init()
 		}
 
 	// init glfw window
-	// TODO: currently window size is hard coded until config loader code exists
-	if ( !mpWindow->init( config.getScreenWidth(), config.getScreenHeight()) )
+	if ( !mpWindow->init( &config ) )
 		{
 		LogFailure("Failed to setup window.")
 		return false;
