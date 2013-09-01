@@ -4,60 +4,75 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-namespace lee{
+namespace lee
+{
 
 Window::Window(Renderer& renderer) :
-//mRenderer(renderer),
-mWindow(nullptr){
-  mWindow = glfwCreateWindow(800, 600, "Untitled", 0, mRenderer.baseContext());
-}
+	//mRenderer(renderer),
+	mWindow(nullptr)
+	{
+	mWindow = glfwCreateWindow(800, 600, "Untitled", 0, mRenderer.baseContext());
+	}
 
-Window::~Window(){
-  glfwDestroyWindow(mWindow);
-}
+Window::~Window()
+	{
+	glfwDestroyWindow(mWindow);
+	}
 
-Renderer& Window::renderer(){
-  return mRenderer;
-}
+Renderer& Window::renderer()
+	{
+	return mRenderer;
+	}
 
-void Window::setTitle(std::string const& title){
-  glfwSetWindowTitle(mWindow, title.c_str());
-}
+void Window::setTitle(std::string const& title)
+	{
+	glfwSetWindowTitle(mWindow, title.c_str());
+	}
 
-void Window::setSize(unsigned width, unsigned height){
-  glfwSetWindowSize(mWindow, width, height);
-}
+void Window::setSize(unsigned width, unsigned height)
+	{
+	glfwSetWindowSize(mWindow, width, height);
+	}
 
-unsigned Window::width() const{
-  int w;
-  glfwGetWindowSize(mWindow, &w, 0);
-  return w;
-}
+unsigned Window::width() const
+	{
+	int w;
+	glfwGetWindowSize(mWindow, &w, 0);
+	return w;
+	}
 
-unsigned Window::height() const{
-  int h;
-  glfwGetWindowSize(mWindow, 0, &h);
-  return h;
-}
+unsigned Window::height() const
+	{
+	int h;
+	glfwGetWindowSize(mWindow, 0, &h);
+	return h;
+	}
 
-void Window::setVisible(bool visible){
-  if(visible){
-	glfwShowWindow(mWindow);
-  }else{
-	glfwHideWindow(mWindow);
-  }
-}
+void Window::setVisible(bool visible)
+	{
+	if(visible)
+		{
+		glfwShowWindow(mWindow);
+		}
+	else
+		{
+		glfwHideWindow(mWindow);
+		}
+	}
 
-bool Window::isOpen() const{
-  return !glfwWindowShouldClose(mWindow);
-}
+bool Window::isOpen() const
+	{
+	return !glfwWindowShouldClose(mWindow);
+	}
 
-void Window::activate(){
-  glfwMakeContextCurrent(mWindow);
-}
+void Window::activate()
+	{
+	glfwMakeContextCurrent(mWindow);
+	}
 
-void Window::display(){
-  glfwSwapBuffers(mWindow);
-}
+void Window::display()
+	{
+	glfwSwapBuffers(mWindow);
+	}
 
 }
