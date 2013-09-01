@@ -35,6 +35,13 @@ Window::~Window()
 bool Window::init(GloomEngineConfig * pConfig)
 	{
 	LogFuncBegin()
+
+	if ( pConfig == nullptr )
+		{
+		LogFailure("GloomEngineConfig pointer is null, can't load window.")
+		return false;
+		}
+
 	if ( !glfwInit() )
 		{
 		LogFailure("glfwInit failed to init")
@@ -56,9 +63,9 @@ bool Window::init(GloomEngineConfig * pConfig)
 		return false;
 		}
 
-	glfwMakeContextCurrent(mpWindow);
+	activate();
 
-	glfwSetWindowTitle(mpWindow, "Gloom Engine");
+	setTitle("Gloom Engine");
 
 	LogFuncEndSuccess()
 	return true;
