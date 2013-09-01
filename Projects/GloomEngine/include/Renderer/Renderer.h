@@ -4,7 +4,7 @@
 
 struct GLFWwindow;
 
-namespace lee
+namespace gloom
 {
 
 class Renderer

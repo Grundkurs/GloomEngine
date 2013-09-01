@@ -4,6 +4,9 @@
 #include <string>
 using std::string;
 
+namespace gloom
+{
+
 inline const string & GetPathToConfigs()
 	{
 	static const string configPath = "../../Resources/Configs/";
@@ -34,4 +37,5 @@ inline const string & GetPathToMaps()
 	return mapPath;
 	}
 
+}
 #endif // RESOURCEPATHS_H

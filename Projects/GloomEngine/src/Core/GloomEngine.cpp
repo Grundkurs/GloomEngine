@@ -3,9 +3,11 @@
 #include "Core/Logger.h"
 #include "Renderer/Window.h"
 #include "Core/GloomEngineConfig.h"
-using namespace gloom;
 
 #include "GLFW/glfw3.h"
+
+namespace gloom
+{
 
 GloomEngine::GloomEngine()
 	:
@@ -99,3 +101,5 @@ void GloomEngine::setReturnValue(int returnValue)
 	{
 	mReturnValue = returnValue;
 	}
+
+}

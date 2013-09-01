@@ -7,7 +7,7 @@
 #include <stdexcept>
 #include <iostream>
 
-namespace lee
+namespace gloom
 {
 
 Renderer::Renderer()

@@ -3,11 +3,9 @@
 #define GLOOMENGINE_H
 
 namespace gloom
-	{
-	class Window;
-	}
+{
 
-using gloom::Window;
+class Window;
 
 class GloomEngine
 {
@@ -51,5 +49,7 @@ private:
 
 	int mReturnValue;
 };
+
+}
 
 #endif // GLOOMENGINE_H

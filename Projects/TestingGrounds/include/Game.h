@@ -4,6 +4,7 @@
 #define GAME_H
 
 #include "Core/GloomEngine.h"
+using gloom::GloomEngine;
 
 class Game : public GloomEngine
 {
