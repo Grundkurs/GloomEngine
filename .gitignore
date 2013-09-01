@@ -1,0 +1,36 @@
+# Build Files
+build/
+builds/
+
+*.o
+
+# Doxygen
+doc/
+
+# gedit (and probably other editors)
+*~
+
+# Ctags
+.tags
+.tags_sorted_by_file
+.gemtags
+
+# QtCreator
+*.config
+*.files
+*.includes
+*.creator
+*.user
+
+# Git merge
+*.orig
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Makefiles
+*/Makefile
+
+# Other
+*/.directory
