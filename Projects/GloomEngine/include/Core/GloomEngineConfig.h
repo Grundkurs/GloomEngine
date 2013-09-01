@@ -1,4 +1,23 @@
-#ifndef GLOWENGINECONFIG_H
-#define GLOWENGINECONFIG_H
+#pragma once
+#ifndef GLOOMENGINECONFIG_H
+#define GLOOMENGINECONFIG_H
 
-#endif // GLOWENGINECONFIG_H
+#include <string>
+
+class GloomEngineConfig
+{
+public:
+	GloomEngineConfig();
+
+	bool LoadConfigFile( const std::string & fileName = "GloomEngine.config" );
+
+	int getScreenWidth() const;
+	int getScreenHeight() const;
+
+private:
+
+	int mScreenWidth;
+	int mScreenHeight;
+
+};
+#endif // GLOOMENGINECONFIG_H

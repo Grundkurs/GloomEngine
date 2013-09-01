@@ -2,6 +2,7 @@
 
 #include "include/Core/Logger.h"
 #include "include/Renderer/Window.h"
+#include "include/Core/GloomEngineConfig.h"
 using namespace gloom;
 
 #include "GLFW/glfw3.h"
@@ -32,9 +33,16 @@ bool GloomEngine::init()
 	LogFuncBegin()
 	// TODO: load the config file for engine startup properties
 
+	GloomEngineConfig config;
+	if ( !config.LoadConfigFile() )
+		{
+		LogFailure("Failed to load GloomEngine config file")
+		return false;
+		}
+
 	// init glfw window
 	// TODO: currently window size is hard coded until config loader code exists
-	if ( !mpWindow->init( 800, 600 ) )
+	if ( !mpWindow->init( config.getScreenWidth(), config.getScreenHeight()) )
 		{
 		LogFailure("Failed to setup window.")
 		return false;

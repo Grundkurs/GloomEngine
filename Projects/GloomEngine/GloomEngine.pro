@@ -14,7 +14,8 @@ SOURCES += \
 	src/Renderer/Renderer.cpp \
 	src/Renderer/Window.cpp \
 	src/Core/Logger.cpp \
-    src/Core/GloomEngine.cpp
+    src/Core/GloomEngine.cpp \
+    src/Core/GloomEngineConfig.cpp
 
 HEADERS += \
 	include/LeeEngine3/Core/TypeTraits.h \
@@ -27,7 +28,8 @@ HEADERS += \
 	include/Renderer/Renderer.h \
 	include/Renderer/Window.h \
     include/Core/GloomEngine.h \
-    include/Core/GloomEngineConfig.h
+    include/Core/GloomEngineConfig.h \
+    include/Core/ResourcePaths.h
 unix:!symbian {
 	maemo5 {
 		target.path = /opt/usr/lib

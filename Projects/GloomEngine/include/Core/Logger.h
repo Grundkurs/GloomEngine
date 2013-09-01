@@ -31,43 +31,44 @@ using std::ofstream;
 
 
 #if !defined(NDEBUG) // debug mode
-// checking for function name macro support
-#if defined __PRETTY_FUNCTION__
-#define LogFuncBegin() gLogger.FuncBegin( __PRETTY_FUNCTION__ );
-#define LogFuncEndSuccess() gLogger.FuncEndSuccess( __PRETTY_FUNCTION__ );
-#elif defined __FUNCTION__
-#define LogFuncBegin() gLogger.FuncBegin( __FUNCTION__ );
-#define LogFuncEndSuccess() gLogger.FuncEndSuccess( __FUNCTION__ );
-#elif defined __FUNCSIG__
-#define LogFuncBegin() gLogger.FuncBegin( __FUNCSIG__ );
-#define LogFuncEndSuccess() gLogger.FuncEndSuccess( __FUNCSIG__ );
-#else
-#define LogFuncBegin() gLogger.FuncBegin( __func__ );
-#define LogFuncEndSuccess() gLogger.FuncEndSuccess( __func__ );
-#endif
+	// checking for function name macro support
+	#if defined __PRETTY_FUNCTION__
+		#define LogFuncBegin() gLogger.FuncBegin( __PRETTY_FUNCTION__ );
+		#define LogFuncEndSuccess() gLogger.FuncEndSuccess( __PRETTY_FUNCTION__ );
+	#elif defined __FUNCTION__
+		#define LogFuncBegin() gLogger.FuncBegin( __FUNCTION__ );
+		#define LogFuncEndSuccess() gLogger.FuncEndSuccess( __FUNCTION__ );
+	#elif defined __FUNCSIG__
+		#define LogFuncBegin() gLogger.FuncBegin( __FUNCSIG__ );
+		#define LogFuncEndSuccess() gLogger.FuncEndSuccess( __FUNCSIG__ );
+	#else
+		#define LogFuncBegin() gLogger.FuncBegin( __func__ );
+		#define LogFuncEndSuccess() gLogger.FuncEndSuccess( __func__ );
+	#endif
 
-// calls appropriate functions for message logging
-#define LogMessage( desc ) gLogger.Message( desc, __FILE__, __LINE__ );
-// calls appropriate function for success logging
-#define LogSuccess( desc ) gLogger.Success( desc, __FILE__, __LINE__ );
-// call appropriate function for warning logging
-#define LogWarning( desc ) gLogger.Warning( desc, __FILE__, __LINE__ );
-// calls appropriate function for error logging
-#define LogError( desc, error, code ) gLogger.Error( __FILE__, __LINE__, desc, error, code );
-#define LogFailure( desc ) gLogger.Failure( __FILE__, __LINE__, desc );
+	// calls appropriate functions for message logging
+	#define LogMessage( desc ) gLogger.Message( desc, __FILE__, __LINE__ );
+	// calls appropriate function for success logging
+	#define LogSuccess( desc ) gLogger.Success( desc, __FILE__, __LINE__ );
+	// call appropriate function for warning logging
+	#define LogWarning( desc ) gLogger.Warning( desc, __FILE__, __LINE__ );
+	// calls appropriate function for error logging
+	#define LogError( desc, error, code ) gLogger.Error( __FILE__, __LINE__, desc, error, code );
+	#define LogFailure( desc ) gLogger.Failure( __FILE__, __LINE__, desc );
+
 #else // release mode
-#define LogFuncBegin()
-#define LogFuncEndSuccess()
+	#define LogFuncBegin()
+	#define LogFuncEndSuccess()
 
-// resolves to nothing in release mode
-#define LogMessage( desc )
-// resolves to nothing in release mode
-#define LogSuccess( desc )
-// resolves to nothing in release mode
-#define LogWarning( desc ) gLogger.Warning( desc, __FILE__, __LINE__ );
-// Logs failures in release mode
-#define LogError( desc, error, code ) gLogger.Error( __FILE__, __LINE__, desc, error, code );
-#define LogFailure( desc ) gLogger.Failure( __FILE__, __LINE__, desc );
+	// resolves to nothing in release mode
+	#define LogMessage( desc )
+	// resolves to nothing in release mode
+	#define LogSuccess( desc )
+	// resolves to nothing in release mode
+	#define LogWarning( desc ) gLogger.Warning( desc, __FILE__, __LINE__ );
+	// Logs failures in release mode
+	#define LogError( desc, error, code ) gLogger.Error( __FILE__, __LINE__, desc, error, code );
+	#define LogFailure( desc ) gLogger.Failure( __FILE__, __LINE__, desc );
 #endif
 
 
