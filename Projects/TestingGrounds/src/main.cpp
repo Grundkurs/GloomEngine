@@ -2,9 +2,18 @@
 
 using namespace std;
 
+#include "include/Game.h"
+
 int main()
 	{
-	cout << "Hello World!" << endl;
-	return 0;
+	Game game;
+	if ( !game.init() )
+		{
+		return 1;
+		}
+	else
+		{
+		return game.run();
+		}
 	}
 

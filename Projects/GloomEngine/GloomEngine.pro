@@ -13,7 +13,8 @@ CONFIG += staticlib
 SOURCES += \
 	src/Renderer/Renderer.cpp \
 	src/Renderer/Window.cpp \
-	src/Core/Logger.cpp
+	src/Core/Logger.cpp \
+    src/Core/GlowEngine.cpp
 
 HEADERS += \
 	include/LeeEngine3/Core/TypeTraits.h \
@@ -24,7 +25,8 @@ HEADERS += \
 	include/Core/Logger.h \
 	include/Core/Factory.h \
 	include/Renderer/Renderer.h \
-	include/Renderer/Window.h
+	include/Renderer/Window.h \
+    include/Core/GlowEngine.h
 unix:!symbian {
 	maemo5 {
 		target.path = /opt/usr/lib

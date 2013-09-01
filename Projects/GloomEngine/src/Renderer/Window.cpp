@@ -1,52 +1,94 @@
-/*
 
+#include "include/Core/Logger.h"
 #include "include/Renderer/Window.h"
 #include "include/Renderer/Renderer.h"
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-namespace lee
+namespace gloom
 {
 
-Window::Window(Renderer& renderer) :
-	mRenderer(renderer),
-	mWindow(nullptr)
+Window::Window() :
+	mpWindow(nullptr)
 	{
-	mWindow = glfwCreateWindow(800, 600, "Untitled", 0, mRenderer.baseContext());
+
 	}
+
+//Window::Window(Renderer& renderer) :
+//	mRenderer(renderer),
+//	mWindow(nullptr)
+//	{
+//	mWindow = glfwCreateWindow(800, 600, "Untitled", 0, mRenderer.baseContext());
+//	}
 
 Window::~Window()
 	{
-	glfwDestroyWindow(mWindow);
+	if ( mpWindow )
+		{
+		glfwDestroyWindow(mpWindow);
+		}
+	glfwTerminate();
 	}
 
-Renderer& Window::renderer()
+bool Window::init(int width, int height)
 	{
-	return mRenderer;
+	LogFuncBegin()
+	if ( !glfwInit() )
+		{
+		LogFailure("glfwInit failed to init")
+		return false;
+		}
+
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3 );
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3 );
+	glfwWindowHint(GLFW_OPENGL_CORE_PROFILE, GL_TRUE);
+	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+	//glfwWindowHint(GLFW_SAMPLES, mpSettings->GetSamplesAA() );
+
+	mpWindow = glfwCreateWindow( width, height, "GLFW3", NULL, NULL );
+
+	if ( !mpWindow )
+		{
+		LogFailure("glfw3 create window failed to create window")
+		glfwTerminate();
+		return false;
+		}
+
+	glfwMakeContextCurrent(mpWindow);
+
+	glfwSetWindowTitle(mpWindow, "LeeEngine2");
+
+	LogFuncEndSuccess()
+	return true;
 	}
+
+//Renderer& Window::renderer()
+//	{
+//	return mRenderer;
+//	}
 
 void Window::setTitle(std::string const& title)
 	{
-	glfwSetWindowTitle(mWindow, title.c_str());
+	glfwSetWindowTitle(mpWindow, title.c_str());
 	}
 
 void Window::setSize(unsigned width, unsigned height)
 	{
-	glfwSetWindowSize(mWindow, width, height);
+	glfwSetWindowSize(mpWindow, width, height);
 	}
 
 unsigned Window::width() const
 	{
 	int w;
-	glfwGetWindowSize(mWindow, &w, 0);
+	glfwGetWindowSize(mpWindow, &w, 0);
 	return w;
 	}
 
 unsigned Window::height() const
 	{
 	int h;
-	glfwGetWindowSize(mWindow, 0, &h);
+	glfwGetWindowSize(mpWindow, 0, &h);
 	return h;
 	}
 
@@ -54,29 +96,27 @@ void Window::setVisible(bool visible)
 	{
 	if(visible)
 		{
-		glfwShowWindow(mWindow);
+		glfwShowWindow(mpWindow);
 		}
 	else
 		{
-		glfwHideWindow(mWindow);
+		glfwHideWindow(mpWindow);
 		}
 	}
 
 bool Window::isOpen() const
 	{
-	return !glfwWindowShouldClose(mWindow);
+	return !glfwWindowShouldClose(mpWindow);
 	}
 
 void Window::activate()
 	{
-	glfwMakeContextCurrent(mWindow);
+	glfwMakeContextCurrent(mpWindow);
 	}
 
 void Window::display()
 	{
-	glfwSwapBuffers(mWindow);
+	glfwSwapBuffers(mpWindow);
 	}
 
 }
-
-*/

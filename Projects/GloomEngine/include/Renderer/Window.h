@@ -1,14 +1,13 @@
-/*
 
 #pragma once
 
-#include "Renderer.h"
+//#include "Renderer.h"
 
 #include <string>
 
 struct GLFWwindow;
 
-namespace lee
+namespace gloom
 {
 
 class Renderer;
@@ -16,7 +15,8 @@ class Renderer;
 class Window
 {
 public:
-	Window(Renderer& renderer);
+	Window();
+	//Window(Renderer& renderer);
 	~Window();
 
 	Window(Window const& other) = delete;
@@ -24,7 +24,9 @@ public:
 	Window(Window && other) = delete;
 	Window& operator=(Window && other) = delete;
 
-	Renderer& renderer();
+	//Renderer& renderer();
+
+	bool init( int width, int height );
 
 	void activate();
 
@@ -42,10 +44,8 @@ public:
 	bool isOpen() const;
 
 private:
-	Renderer& mRenderer;
-	GLFWwindow* mWindow;
+	//Renderer& mRenderer;
+	GLFWwindow * mpWindow;
 };
 
 }
-
-*/
