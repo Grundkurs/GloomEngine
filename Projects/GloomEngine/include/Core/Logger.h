@@ -114,10 +114,10 @@ protected:
 	void PutTimeStr();
 
 private:
-	Logger(const Logger& other);    // copy ctor private
-	Logger(const Logger && other);   // move ctor private
-	Logger& operator = (const Logger& other);     // assignment operator private
-	Logger& operator = (const Logger && other);    // move assignment operator private
+	Logger(const Logger& other);	// copy ctor private
+	Logger(const Logger && other);		// move ctor private
+	Logger& operator = (const Logger& other);	// assignment operator private
+	Logger& operator = (const Logger && other);		// move assignment operator private
 
 };
 

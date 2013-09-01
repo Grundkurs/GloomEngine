@@ -40,6 +40,8 @@ protected:
 private:
 	GloomEngine( const GloomEngine & other );
 	GloomEngine( GloomEngine && other );
+	GloomEngine & operator = ( const GloomEngine & other );
+	GloomEngine & operator = ( GloomEngine && other );
 
 	double mTimeStampD;
 	double mTimeDeltaD;
