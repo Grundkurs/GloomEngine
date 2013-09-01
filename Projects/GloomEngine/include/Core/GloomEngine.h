@@ -1,6 +1,6 @@
 #pragma once
-#ifndef GLOWENGINE_H
-#define GLOWENGINE_H
+#ifndef GLOOMENGINE_H
+#define GLOOMENGINE_H
 
 namespace gloom
 	{
@@ -9,11 +9,11 @@ namespace gloom
 
 using gloom::Window;
 
-class GlowEngine
+class GloomEngine
 {
 public:
-	GlowEngine();
-	virtual ~GlowEngine();
+	GloomEngine();
+	virtual ~GloomEngine();
 
 	bool init();
 
@@ -38,8 +38,8 @@ protected:
 	Window * mpWindow;
 
 private:
-	GlowEngine( const GlowEngine & other );
-	GlowEngine( GlowEngine && other );
+	GloomEngine( const GloomEngine & other );
+	GloomEngine( GloomEngine && other );
 
 	double mTimeStampD;
 	double mTimeDeltaD;
@@ -50,4 +50,4 @@ private:
 	int mReturnValue;
 };
 
-#endif // GLOWENGINE_H
+#endif // GLOOMENGINE_H

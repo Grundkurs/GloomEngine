@@ -4,7 +4,7 @@
 
 Game::Game()
 	:
-	GlowEngine()
+	GloomEngine()
 	{
 
 	}
@@ -18,7 +18,7 @@ bool Game::init()
 	{
 	LogFuncBegin()
 
-	if ( !GlowEngine::init() )
+	if ( !GloomEngine::init() )
 		{
 		LogFailure("Failed to init GlowEngine")
 		return false;

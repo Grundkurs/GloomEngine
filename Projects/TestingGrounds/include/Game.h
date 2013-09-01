@@ -3,9 +3,9 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "include/Core/GlowEngine.h"
+#include "include/Core/GloomEngine.h"
 
-class Game : public GlowEngine
+class Game : public GloomEngine
 {
 public:
 	Game();

@@ -1,4 +1,4 @@
-#include "include/Core/GlowEngine.h"
+#include "include/Core/GloomEngine.h"
 
 #include "include/Core/Logger.h"
 #include "include/Renderer/Window.h"
@@ -6,7 +6,7 @@ using namespace gloom;
 
 #include "GLFW/glfw3.h"
 
-GlowEngine::GlowEngine()
+GloomEngine::GloomEngine()
 	:
 	mpWindow( new Window() ),
 	mTimeStampD(0.0),
@@ -18,7 +18,7 @@ GlowEngine::GlowEngine()
 
 	}
 
-GlowEngine::~GlowEngine()
+GloomEngine::~GloomEngine()
 	{
 	if ( mpWindow )
 		{
@@ -27,7 +27,7 @@ GlowEngine::~GlowEngine()
 		}
 	}
 
-bool GlowEngine::init()
+bool GloomEngine::init()
 	{
 	LogFuncBegin()
 	// TODO: load the config file for engine startup properties
@@ -44,7 +44,7 @@ bool GlowEngine::init()
 	return true;
 	}
 
-int GlowEngine::run()
+int GloomEngine::run()
 	{
 	LogFuncBegin()
 	mTimeStampD = glfwGetTime();
@@ -69,27 +69,27 @@ int GlowEngine::run()
 	return mReturnValue;
 	}
 
-double GlowEngine::getTimeStampD() const
+double GloomEngine::getTimeStampD() const
 	{
 	return mTimeStampD;
 	}
 
-double GlowEngine::getTimeDeltaD() const
+double GloomEngine::getTimeDeltaD() const
 	{
 	return mTimeDeltaD;
 	}
 
-float GlowEngine::getTimeStampF() const
+float GloomEngine::getTimeStampF() const
 	{
 	return mTimeStampF;
 	}
 
-float GlowEngine::getTimeDeltaF() const
+float GloomEngine::getTimeDeltaF() const
 	{
 	return mTimeDeltaF;
 	}
 
-void GlowEngine::setReturnValue(int returnValue)
+void GloomEngine::setReturnValue(int returnValue)
 	{
 	mReturnValue = returnValue;
 	}
