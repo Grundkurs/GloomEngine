@@ -1,3 +1,5 @@
+/*
+
 #include "include/Renderer/Renderer.h"
 
 #include <GL/glew.h>
@@ -62,3 +64,5 @@ void Renderer::update()
 	}
 
 }
+
+*/

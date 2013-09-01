@@ -81,43 +81,43 @@ using std::ofstream;
 // so they will not slow the engine down.
 // Only the LogError, LogFailure, and LogWarning macros will resolve, so in release mode errors and warnings are still logged
 class Logger
-	{
-	public:
-		Logger(const std::string& file);
-		~Logger();
+{
+public:
+	Logger(const std::string& file);
+	~Logger();
 
-		// logs the begin of a function, can be useful for automatted logs to visualize the code
-		void FuncBegin(const string& function = "Not supported");
-		// logs the successful end of a function, can be usefull for automated logs to visualize the code
-		void FuncEndSuccess(const string& function = "Not supported");
+	// logs the begin of a function, can be useful for automatted logs to visualize the code
+	void FuncBegin(const string& function = "Not supported");
+	// logs the successful end of a function, can be usefull for automated logs to visualize the code
+	void FuncEndSuccess(const string& function = "Not supported");
 
-		// logs a message
-		void Message(const string& desc, const string& file, const unsigned long long line);
+	// logs a message
+	void Message(const string& desc, const string& file, const unsigned long long line);
 
-		// logs a success
-		void Success(const string& desc, const string& file, const unsigned long long line);
+	// logs a success
+	void Success(const string& desc, const string& file, const unsigned long long line);
 
-		// logs a warning
-		void Warning(const string& desc, const string& file, const unsigned long long line);
+	// logs a warning
+	void Warning(const string& desc, const string& file, const unsigned long long line);
 
-		// logs an error with strings and error code
-		void Error(const string& file, const unsigned long long line, const string& desc, const string& error = string(), const int errorCode = 0);
+	// logs an error with strings and error code
+	void Error(const string& file, const unsigned long long line, const string& desc, const string& error = string(), const int errorCode = 0);
 
-		// logs a failure with string
-		void Failure(const string& file, const unsigned long long line, const string& desc);
+	// logs a failure with string
+	void Failure(const string& file, const unsigned long long line, const string& desc);
 
-	protected:
-		ofstream* mpOfs;
+protected:
+	ofstream* mpOfs;
 
-		void LogFileLineDesc(const string& file, const unsigned long long line, const string& desc);
-		void PutTimeStr();
+	void LogFileLineDesc(const string& file, const unsigned long long line, const string& desc);
+	void PutTimeStr();
 
-	private:
-		Logger(const Logger& other);    // copy ctor private
-		Logger(const Logger && other);   // move ctor private
-		Logger& operator = (const Logger& other);     // assignment operator private
-		Logger& operator = (const Logger && other);    // move assignment operator private
+private:
+	Logger(const Logger& other);    // copy ctor private
+	Logger(const Logger && other);   // move ctor private
+	Logger& operator = (const Logger& other);     // assignment operator private
+	Logger& operator = (const Logger && other);    // move assignment operator private
 
-	};
+};
 
 extern Logger gLogger;

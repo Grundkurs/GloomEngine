@@ -1,3 +1,5 @@
+/*
+
 #include "include/Renderer/Window.h"
 #include "include/Renderer/Renderer.h"
 
@@ -8,7 +10,7 @@ namespace lee
 {
 
 Window::Window(Renderer& renderer) :
-	//mRenderer(renderer),
+	mRenderer(renderer),
 	mWindow(nullptr)
 	{
 	mWindow = glfwCreateWindow(800, 600, "Untitled", 0, mRenderer.baseContext());
@@ -76,3 +78,5 @@ void Window::display()
 	}
 
 }
+
+*/
