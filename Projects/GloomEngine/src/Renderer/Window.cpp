@@ -57,7 +57,7 @@ bool Window::init(int width, int height)
 
 	glfwMakeContextCurrent(mpWindow);
 
-	glfwSetWindowTitle(mpWindow, "LeeEngine2");
+	glfwSetWindowTitle(mpWindow, "Gloom Engine");
 
 	LogFuncEndSuccess()
 	return true;
