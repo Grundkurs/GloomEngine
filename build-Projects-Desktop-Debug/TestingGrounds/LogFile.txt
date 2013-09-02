@@ -1,10 +1,10 @@
-Sun Sep  1 18:48:43 2013 FUNCTION   BEGIN  init
-Sun Sep  1 18:48:43 2013 FUNCTION   BEGIN  init
-Sun Sep  1 18:48:43 2013 FUNCTION   BEGIN  LoadConfigFile
-Sun Sep  1 18:48:43 2013 FUNCTION   END    LoadConfigFile
-Sun Sep  1 18:48:43 2013 FUNCTION   BEGIN  init
-Sun Sep  1 18:48:43 2013 FUNCTION   END    init
-Sun Sep  1 18:48:43 2013 FUNCTION   END    init
-Sun Sep  1 18:48:43 2013 FUNCTION   END    init
-Sun Sep  1 18:48:43 2013 FUNCTION   BEGIN  run
-Sun Sep  1 18:48:45 2013 FUNCTION   END    run
+Sun Sep  1 20:15:16 2013 FUNCTION   BEGIN  bool Game::init()
+Sun Sep  1 20:15:16 2013 FUNCTION   BEGIN  bool gloom::GloomEngine::init()
+Sun Sep  1 20:15:16 2013 FUNCTION   BEGIN  bool gloom::GloomEngineConfig::LoadConfigFile(const string&)
+Sun Sep  1 20:15:16 2013 FUNCTION   END    bool gloom::GloomEngineConfig::LoadConfigFile(const string&)
+Sun Sep  1 20:15:16 2013 FUNCTION   BEGIN  bool gloom::Window::init(gloom::GloomEngineConfig*)
+Sun Sep  1 20:15:16 2013 FUNCTION   END    bool gloom::Window::init(gloom::GloomEngineConfig*)
+Sun Sep  1 20:15:16 2013 FUNCTION   END    bool gloom::GloomEngine::init()
+Sun Sep  1 20:15:16 2013 FUNCTION   END    bool Game::init()
+Sun Sep  1 20:15:16 2013 FUNCTION   BEGIN  int gloom::GloomEngine::run()
+Sun Sep  1 20:15:20 2013 FUNCTION   END    int gloom::GloomEngine::run()

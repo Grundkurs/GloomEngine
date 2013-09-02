@@ -31,20 +31,11 @@ using std::ofstream;
 
 
 #if !defined(NDEBUG) // debug mode
-	// checking for function name macro support
-	#if defined __PRETTY_FUNCTION__
-		#define LogFuncBegin() gLogger.FuncBegin( __PRETTY_FUNCTION__ );
-		#define LogFuncEndSuccess() gLogger.FuncEndSuccess( __PRETTY_FUNCTION__ );
-	#elif defined __FUNCTION__
-		#define LogFuncBegin() gLogger.FuncBegin( __FUNCTION__ );
-		#define LogFuncEndSuccess() gLogger.FuncEndSuccess( __FUNCTION__ );
-	#elif defined __FUNCSIG__
-		#define LogFuncBegin() gLogger.FuncBegin( __FUNCSIG__ );
-		#define LogFuncEndSuccess() gLogger.FuncEndSuccess( __FUNCSIG__ );
-	#else
-		#define LogFuncBegin() gLogger.FuncBegin( __func__ );
-		#define LogFuncEndSuccess() gLogger.FuncEndSuccess( __func__ );
-	#endif
+
+	// supports visual studio, mingw, and g++
+	#define LogFuncBegin() gLogger.FuncBegin( __PRETTY_FUNCTION__ );
+	#define LogFuncEndSuccess() gLogger.FuncEndSuccess( __PRETTY_FUNCTION__ );
+
 
 	// calls appropriate functions for message logging
 	#define LogMessage( desc ) gLogger.Message( desc, __FILE__, __LINE__ );
