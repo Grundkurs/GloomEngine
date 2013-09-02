@@ -48,13 +48,13 @@ bool Window::init(GloomEngineConfig * pConfig)
 		return false;
 		}
 
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3 );
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3 );
-	glfwWindowHint(GLFW_OPENGL_CORE_PROFILE, GL_TRUE);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, pConfig->getGLVersionMajor() );
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, pConfig->getGLVersionMinor() );
+	glfwWindowHint(GLFW_OPENGL_CORE_PROFILE, pConfig->getGLCoreProfile() ? GL_TRUE : GL_FALSE);
 	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-	//glfwWindowHint(GLFW_SAMPLES, mpSettings->GetSamplesAA() );
+	glfwWindowHint(GLFW_SAMPLES, pConfig->getGLAASamples() );
 
-	mpWindow = glfwCreateWindow( pConfig->getScreenWidth(), pConfig->getScreenHeight(), "GLFW3", NULL, NULL );
+	mpWindow = glfwCreateWindow( pConfig->getScreenWidth(), pConfig->getScreenHeight(), "Gloom Engine", NULL, NULL );
 
 	if ( !mpWindow )
 		{
@@ -64,8 +64,6 @@ bool Window::init(GloomEngineConfig * pConfig)
 		}
 
 	activate();
-
-	setTitle("Gloom Engine");
 
 	LogFuncEndSuccess()
 	return true;

@@ -18,6 +18,13 @@ public:
 	int getScreenWidth() const;
 	int getScreenHeight() const;
 
+	int getGLVersionMajor() const;
+	int getGLVersionMinor() const;
+
+	bool getGLCoreProfile() const;
+
+	int getGLAASamples() const;
+
 private:
 	GloomEngineConfig( const GloomEngineConfig & other );
 	GloomEngineConfig( GloomEngineConfig && other );
@@ -27,6 +34,12 @@ private:
 	int mScreenWidth;
 	int mScreenHeight;
 
+	int mGLVersionMajor;
+	int mGLVersionMinor;
+
+	bool mGLCoreProfile;
+
+	int mGLAASamples;
 };
 
 }

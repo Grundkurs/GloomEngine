@@ -12,7 +12,11 @@ namespace gloom
 GloomEngineConfig::GloomEngineConfig()
 	:
 	mScreenWidth(800),
-	mScreenHeight(600)
+	mScreenHeight(600),
+	mGLVersionMajor(3),
+	mGLVersionMinor(3),
+	mGLCoreProfile(true),
+	mGLAASamples(0)
 	{
 
 	}
@@ -41,6 +45,25 @@ bool GloomEngineConfig::LoadConfigFile(const string & fileName)
 			{
 			ifs >> mScreenHeight;
 			}
+		else if ( command == "glVersionMajor" )
+			{
+			ifs >> mGLVersionMajor;
+			}
+		else if ( command == "glVersionMinor" )
+			{
+			ifs >> mGLVersionMinor;
+			}
+		else if ( command == "glCoreProfile" )
+			{
+			string strBool;
+			ifs >> strBool;
+
+			mGLCoreProfile = ( strBool == "true" ? true : false );
+			}
+		else if ( command == "glAASamples" )
+			{
+			ifs >> mGLAASamples;
+			}
 		else
 			{
 			LogWarning("Script file has unknown command " + command)
@@ -67,6 +90,26 @@ int GloomEngineConfig::getScreenWidth() const
 int GloomEngineConfig::getScreenHeight() const
 	{
 	return mScreenHeight;
+	}
+
+int GloomEngineConfig::getGLVersionMajor() const
+	{
+	return mGLVersionMajor;
+	}
+
+int GloomEngineConfig::getGLVersionMinor() const
+	{
+	return mGLVersionMinor;
+	}
+
+bool GloomEngineConfig::getGLCoreProfile() const
+	{
+	return mGLCoreProfile;
+	}
+
+int GloomEngineConfig::getGLAASamples() const
+	{
+	return mGLAASamples;
 	}
 
 }
